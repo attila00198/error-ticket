@@ -14,7 +14,7 @@ switch ($uri[1]) {
                 $tickets = null;
                 $ticketsCtrl = new Tickets();
                 $tickets = $ticketsCtrl->getAllTickets();
-                include 'tickets.php';
+                header("location: /tickets");
             } else {
                 $id = (int) $uri[2];
                 include 'ticket.php';
