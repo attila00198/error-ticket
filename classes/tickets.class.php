@@ -40,4 +40,17 @@ class Tickets extends DB {
             return false;
         }
     }
+
+    public function deleteTicket($id)
+    {
+        $sql = "DELETE FROM tickets WHERE id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        try {
+            $stmt->execute([$id]);
+            return true;
+        } catch (PDOException $e) {
+            throw new PDOException($e->getMessage());
+            return false;
+        }
+    }
 }

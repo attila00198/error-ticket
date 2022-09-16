@@ -1,9 +1,14 @@
+<?php
+/* if(!isset($_SESSION["user"])) {
+    header("location: /");
+} */
+?>
 <div>
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-10 mx-auto">
         <?php if($tickets == null): ?>
         <h1>Nincsenek beküldött jegyek</h1>
         <?php else: ?>
-        <table class="table table-primary table-striped">
+        <table class="table table-fixed table-primary table-striped">
             <thead>
                 <tr>
                     <th scope="col">Név</th>
@@ -25,6 +30,12 @@
                             <form action="tickets" method="POST">
                             <input type="number" name="id" id="id" value="<?= $ticket["id"] ?>" hidden>
                             <button class="btn btn-success" type="submit" name="success">Kész</button>
+                            </form>
+                        <?php endif; ?>
+                        <?php if ($ticket["solved"] == 1) : ?>
+                            <form action="tickets" method="POST">
+                            <input type="number" name="id" id="id" value="<?= $ticket["id"] ?>" hidden>
+                            <button class="btn btn-danger" type="delete" name="delete">Törlés</button>
                             </form>
                         <?php endif; ?>
                         </td>
