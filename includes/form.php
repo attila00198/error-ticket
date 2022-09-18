@@ -16,6 +16,6 @@
             <textarea class="form-control" name="description" id="description" rows="3"></textarea>
             <small id="descriptionHelp" class="form-text text-muted">A hibajelenség rövid leírása</small>
         </div>
-        <button type="submit" name="submit" class="btn btn-primary">Küldés</button>
+        <button type="submit" name="submit" class="btn btn-primary m-2">Küldés</button>
     </form>
 </div>

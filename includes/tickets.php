@@ -1,8 +1,3 @@
-<?php
-/* if(!isset($_SESSION["user"])) {
-    header("location: /");
-} */
-?>
 <div>
     <div class="col-md-10 mx-auto">
         <?php if($tickets == null): ?>

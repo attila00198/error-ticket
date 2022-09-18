@@ -1,5 +1,5 @@
 <div class="ticket">
-    <h1>Jegy részletei</h1>
+    <h1>Hibajegy részletei</h1>
     
     </div>
     

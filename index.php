@@ -1,4 +1,4 @@
-<?php include 'includes/autoload.php'; session_start(); ?>
+<?php include 'includes/autoload.php'; ?>
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +11,7 @@
 
     <!-- Bootstrap CSS v5.2.0-beta1 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 
 <body>
@@ -22,23 +22,36 @@
             </div>
         </div>
     </header>
-    <nav class="row menu">
-        <ul class="nav justify-content-start flex-rows">
+
+    <nav class="row navbar navbar-light bg-light justify-content-between menu">
+        <ul class="nav col-auto">
             <li class="nav-item">
-                <a class="nav-link active" href="/" aria-current="page">Hibajegy nyitása</a>
+                <a class="nav-link active" href="/" aria-current="page">Hibajegy küldése</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tickets">Hibajegyek</a>
+                <a class="nav-link" href="/tickets">Hibajegyek kezelése</a>
             </li>
         </ul>
+
+        <?php if(!isset($_SESSION["user"])): ?>
+        <ul class="nav col-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/register" aria-current="page">Regisztráció</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Belépés</a>
+            </li>
+        </ul>
+        <?php endif; ?>
     </nav>
     <main>
         <div class="container">
             <div class="row justify-content-center align-items-center g-2 content">
-                <?php include './ticketHandler.php'; ?>
+                <?php include 'router.php'; ?>
             </div>
         </div>
     </main>
+
     <footer>
         <!-- place footer here -->
     </footer>

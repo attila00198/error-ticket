@@ -12,7 +12,7 @@ class DB {
             $conn = new PDO($dsn, $this->db_user, $this->db_pass);
             return $conn;
         } catch (PDOException $e) {
-            throw new PDOException($e->getMessage());
+            echo '<span class="alert alert-danger">Hiba lépett fel az adatbázishoz való kapcsolódás során!<br>'.$e->getMessage().'</span>';
             die();
         }
     }

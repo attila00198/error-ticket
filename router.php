@@ -10,9 +10,9 @@ switch ($uri[1]) {
             $ticket = new Tickets();
             if ($ticket->createTicket($name, $email, $desctiption)) {
                 $tickets = $ticket->getAllTickets();
-                include_once "tickets.php";
+                include_once "includes/tickets.php";
             } else {
-                include_once "form.php";
+                include_once "includes/form.php";
             }
         }
 
@@ -32,14 +32,21 @@ switch ($uri[1]) {
             $tickets = null;
             $ticketsCtrl = new Tickets();
             $tickets = $ticketsCtrl->getAllTickets();
-            include_once "tickets.php";
+            include_once "includes/tickets.php";
         } else {
             $id = (int) $uri[2];
-            include_once 'ticket.php';
+            include_once 'includes/ticket.php';
         }
         break;
 
+    case 'login':
+        echo "<h1>Belépés</h1>";
+        break;
+
+    case 'register':
+        echo "<h1>Regisztráció</h1>";
+        break;
     default:
-        include 'form.php';
+        include 'includes/form.php';
         break;
 }
