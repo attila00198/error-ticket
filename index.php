@@ -23,30 +23,38 @@
         </div>
     </header>
 
-    <nav class="row navbar navbar-light bg-light justify-content-between menu">
-        <ul class="nav col-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/" aria-current="page">Hibajegy küldése</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/tickets">Hibajegyek kezelése</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/" aria-current="page">Hibajegy küldése</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tickets">Hibajegyek kezelése</a>
+                    </li>
+                </ul>
 
-        <?php if(!isset($_SESSION["user"])): ?>
-        <ul class="nav col-auto">
-            <li class="nav-item">
-                <a class="nav-link active" href="/register" aria-current="page">Regisztráció</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/login">Belépés</a>
-            </li>
-        </ul>
-        <?php endif; ?>
+                <?php if (!isset($_SESSION["user"])) : ?>
+                    <ul class="navbar-nav d-flex">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register" aria-current="page">Regisztráció</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Belépés</a>
+                        </li>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </div>
     </nav>
+
     <main>
         <div class="container">
-            <div class="row justify-content-center align-items-center g-2 content">
+            <div class="row justify-content-center align-items-center g-2">
                 <?php include 'router.php'; ?>
             </div>
         </div>
@@ -61,6 +69,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
     </script>
+
+    <script src="public/js/sript.js"></script>
 </body>
 
 </html>
